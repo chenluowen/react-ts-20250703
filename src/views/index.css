@@ -1,0 +1,101 @@
+/* fonts.css */
+@font-face {
+    font-family: 'AlibabaNumsHeiti';
+    src: url('./assets//font/AlimamaShuHeiTi-Bold.woff2') format('woff2'),
+         url('./assets//font//AlimamaShuHeiTi-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.title{
+  width: 100%;
+    font-family: AlibabaNumsHeiti;
+    color: #ddd;
+    font-size: 24px;
+    font-weight: 500;
+}
+.aiWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: pink; */
+  .aiContnet{
+    width: 80%;
+    height: 70vh;
+    margin-top: 40px;
+    border: 0.5px solid rgb(45, 45, 49);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .5);
+    .quester{
+     height: 50px;
+     width: 100%;
+     border-top: 0.5px solid rgb(45, 45, 49);
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+    }
+    .answer{
+      flex: 1;
+      /* width: 100%; */
+      color: #ddd;
+      line-height: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      /* background-color: bisque; */
+    }
+  }
+}
+.biWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  .biContnet{
+    width: 100%;
+    height: 50vh;
+    margin-top: 40px;
+  }
+}
+.ant-input{
+  background-color: rgb(18, 18, 20);
+  border: none;
+  margin-left: 20px;
+  color: #ddd;
+}
+.ant-input-outlined:hover{
+  background-color: rgb(18, 18, 20);
+  border: none;
+}
+.ant-input-outlined:focus{
+  border: none;
+}
+
+/* styles.css */
+.ant-input::-webkit-input-placeholder {
+  color: #ddd !important;
+}
+
+.ant-input:-ms-input-placeholder {
+  color: #ddd !important;
+}
+
+.ant-input::placeholder {
+  color: #ddd !important;
+}
+
+.ant-btn{
+  background-color: rgb(18, 18, 20) !important;
+  color: #ddd;
+  border: none !important;
+}
+

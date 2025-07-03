@@ -1,0 +1,242 @@
+// .home_wrapper{
+//     width: 100%;
+//     height: 100%;
+//     // background-color: $colorPrimaryBg;
+//     .left{
+//        height: 100%;
+//        .top{
+//         width: 100%;
+//         border-radius: 24px;
+//         .top_title{
+//             width: 100%;
+//             font-size: 25px ;
+//             color: $color_font;
+//             // background-color: $colorPrimaryBg;
+//         }
+//         .top_content{
+//             // width: 100%;
+//             border-radius: 24px;
+//             // background-image: linear-gradient(140deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055),rgba(105, 82, 148, 0.459));
+//             // backdrop-filter: blur(20px) brightness(90%); // 模糊 + 稍微调暗
+//             // -webkit-backdrop-filter: blur(10px) brightness(90%); //
+//             // box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+//             // background-color: white;
+//             position: relative;
+//             cursor: pointer;
+//             .demo{
+//                 width: 100%;
+//                 height: 100%;
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//             }
+//             .shell{
+//                 width: 100%;
+//                 height: 100%;
+//                 display: grid;
+//                 position: relative;
+//                 grid-area: stack;
+//                 .blob{
+//                     // --border-radius: 115% 140% 145% 110% /125% 140% 110% 125%;
+//                     // aspect-ratio: 1;
+//                     display: block;
+//                     grid-area:stack;
+//                     background-repeat: no-repeat;
+//                     background-position: center;
+//                     // border: 80px solid transparent;
+//                     // border-radius: var(--border-radius,50%);
+//                     // mask-image: 
+//                     //      linear-gradient(transparent,transparent),
+//                     //      linear-gradient(black,white);
+//                     // mask-clip:padding-box,border-box;
+//                     // mask-composite: intersect;
+//                     // mix-blend-mode: screen;
+//                     height: 300px;
+//                     // filter: blur(100px);
+                    
+//                 }
+//                 .blob:nth-child(1){
+//                     // background-color: #07D;
+//                     // background-image: linear-gradient(#07D,#3cc,#07D);
+//                     // rotate: 30deg;
+//                     // scale: 1.03;
+//                 animation: spin infinite 10s linear;
+
+//                 }
+//                 .blob:nth-child(2){
+//                     // background-color: #F43;
+//                     // background-image: linear-gradient(#F43,#F81,#F43);
+//                     // rotate: 60deg;
+//                     // scale: 0.95;
+//                 animation: two infinite 15s linear;
+
+//                 }
+//                 .blob:nth-child(3){
+//                     // background-color: #3A7;
+//                     // background-image: linear-gradient(#3A7,#1F7,#3A7);
+//                     // rotate: 30deg;
+//                     // scale: 0.97;
+//                 animation: spin infinite 18s linear;
+
+//                 }
+  
+//                 @keyframes spin {
+//                     from {
+//                         rotate: 0deg;
+//                     }
+//                     to{
+//                         rotate: 360deg;
+//                     }
+                    
+//                 }
+//                  @keyframes two {
+//                     from {
+//                         rotate: 360deg;
+//                     }
+//                     to{
+//                         rotate: 0deg;
+//                     }
+                    
+//                 }
+//                 // @keyframes two {
+//                 //     from {
+//                 //         rotate: 360deg;
+//                 //     }
+//                 //     to{
+//                 //         rotate: 0deg;
+//                 //     }
+                    
+//                 // }
+//             }
+//             .container{
+//                 position: relative;
+//                 width: 100%;
+//                 height: 100%;
+//                 overflow: hidden;
+//                 // background-color: white;
+//                 .bubbles{
+//                 display: flex;
+//                 }
+//                 .bubbles span{
+//                     position: absolute;
+//                     top: 50%;
+//                     left: 50%;
+//                     transform: translate(-50%, -50%);
+//                     width: 20px;
+//                     height: 20px;
+//                     background-image: linear-gradient(180deg, #acb0e656, #acb0e6b4,#acb0e6);
+//                     // background-color: #acb0e6;
+//                     margin: 0 4px;
+//                     border-radius: 50px;
+//                     box-shadow: 0 0 10px #acb0e656,
+//                                 0 0 50px #acb0e6b4,
+//                                 0 0 100px #acb0e6;
+//                     animation: explode var(--duration) ease-in-out infinite;
+//                 }
+//                 .bubbles span:nth-child(even){
+//                     background-image: linear-gradient(180deg, #e8accc44, #e8accca8,#e8accc);
+//                     box-shadow: 0 0 10px #e8accc44,
+//                                 0 0 50px #e8accca8,
+//                                 0 0 100px #e8accc;
+                                
+//                 }
+//                 @keyframes explode {
+//                     0% {
+//                         transform: translate(-50%, -50%) rotate(var(--angle)) translate(0);
+//                         opacity: 1;
+//                         scale: 1;
+//                     }
+//                     100% {
+//                         transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--distance));
+//                         opacity: 0;
+//                         scale: 0.5;
+//                     }
+//                 }
+//         }
+            
+//         }
+//        }
+//        .bottom{
+//         width: 100%;
+//         border-radius: 24px;
+//         // background-color: $colorPrimaryBg;
+//        }
+
+//     }
+//     .right{
+//        height: 100%;
+//        .top{
+//         width: 100%;
+//         height: 100%;
+//         border-radius: 24px;
+//         background-color: white;
+//         .demo1{
+//             left: 236px;
+//             top: 64px;
+//             width: 404px;
+//             height: 242px;
+//             opacity: 1;
+//             border-radius: 12px;
+//             background: rgb(240, 255, 172);
+//             border: 1px solid rgba(255, 255, 255, 0.82);
+//             position: relative;
+//             overflow: hidden;
+
+
+//         }
+//        }
+//         .bottom{
+//         width: 100%;
+//         height: 100%;
+//         border-radius: 24px;
+//         // background-color: $colorPrimaryBg;
+//        }
+
+//     }
+// }
+// .chroma_grid_new{
+//     // background-color: $colorPrimaryBg;
+//     border-radius: 30px;
+// }
+
+.home_wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    .left{
+        height: 100%;
+        // background-color: rgba(238, 232, 170, 0.212);
+        position: relative;
+        .button_wrapper{
+            width: 100%;
+            position: absolute;
+            padding-top: 6px;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            .button{
+                width: 58px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 6px;
+                color:white;
+                font-size: 12px;
+                cursor: pointer;
+                background-color: $bodyBy;
+            }
+
+        }
+        .echarts_box{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .right{
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(211, 170, 238, 0.212);
+    }
+}
