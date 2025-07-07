@@ -11,6 +11,8 @@ import CardSwap, { Card } from '@/components/Card_Swap'
 
 
 import EchartsGraph from './components/echarts-graph'
+import ThreeJSChart from "./components/ForceGraph3DOptions"
+import ForceGraph3DOptions from "./components/ForceGraph3DOptions"
 
 const Home = () => { 
     const items:any[] = [
@@ -34,10 +36,11 @@ const Home = () => {
                 </Flex>
                 {/* 图表内容 */}
                 <Flex className={styles.echarts_box}>
-                    <EchartsGraph/>
+                    {/* <EchartsGraph/> */}
+                    <ForceGraph3DOptions/>
                 </Flex>
             </Flex>
-            <div className={ styles.right} style={{ width: '300px' }}>right</div>
+            <div className={ styles.right} >right</div>
 
 
         </Flex>

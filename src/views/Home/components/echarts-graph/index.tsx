@@ -6,33 +6,33 @@ import ReactECharts from "echarts-for-react"
 import { source, symbol } from "framer-motion/client"
 import img from './gongsi.png'
 const EchartsGraph = () => {
-    const [option,setOption] = useState({})
-    var list:any = [];
-    var links:any = [];
+    const [option, setOption] = useState({})
+    var list: any = [];
+    var links: any = [];
     var legend: any = [];
     const uploadImg2 = '//img.isqqw.com/profile/upload/2023/07/24/9cebdad7-ef34-4da9-b76b-ab47c992c18f.svg'
     const uploadImg1 = 'https://img.isqqw.com/profile/upload/2023/07/24/373e5229-abcf-4a55-bca8-5051f95c84f4.png'
 
     const echartRef = useRef(null)
-    const getData=()=> {  
-        let data:any = {
+    const getData = () => {
+        let data: any = {
             name: "根节点1",
             value: 0,
-            count:0,
+            count: 0,
             list: []
         };
         for (let i = 1; i <= 10; i++) {
-            let obj:any = {
+            let obj: any = {
                 name: "节点" + i,
                 value: i,
-                count:Math.random() *90  + 10,
+                count: Math.random() * 90 + 10,
                 list: [],
             };
             for (let j = 1; j <= 5; j++) {
-                let obj2:any = {
+                let obj2: any = {
                     name: `节点1-${i}-${j}`,
                     value: 1 + "-" + i + "-" + j,
-                    count:Math.random() *9  + 1,
+                    count: Math.random() * 9 + 1,
                 };
                 // if(j%2==1){
                 //   obj2.list=[]
@@ -55,15 +55,15 @@ const EchartsGraph = () => {
         return arr;
     }
     var listData = getData()
-    var categories = listData[0].list.map((item:any) => {
-    return {
-        name: item.name
-    };
+    var categories = listData[0].list.map((item: any) => {
+        return {
+            name: item.name
+        };
     });
     var legendColor = colors.map((item: any) => item.c2)
     //计算list
     const handle2 = (arr: any, idx: any, color: any = colors, category: any = undefined) => {
-        arr.forEach((item:any, index:number) => {
+        arr.forEach((item: any, index: number) => {
             if (item.name === null) {
                 return false;
             }
@@ -122,17 +122,17 @@ const EchartsGraph = () => {
                     y: 0.5,
                     r: 0.5,
                     colorStops: [{
-                            offset: 0,
-                            color: color.c1 // 0% 处的颜色
-                        },
-                        {
-                            offset: 0.8,
-                            color: color.c1 // 80% 处的颜色
-                        },
-                        {
-                            offset: 1,
-                            color: "rgba(0, 0, 0, 0.3)" // 100% 处的颜色
-                        }
+                        offset: 0,
+                        color: color.c1 // 0% 处的颜色
+                    },
+                    {
+                        offset: 0.8,
+                        color: color.c1 // 80% 处的颜色
+                    },
+                    {
+                        offset: 1,
+                        color: "rgba(0, 0, 0, 0.3)" // 100% 处的颜色
+                    }
                     ],
                     global: false
                 };
@@ -143,17 +143,17 @@ const EchartsGraph = () => {
                     y: 0.5,
                     r: 0.5,
                     colorStops: [{
-                            offset: 0,
-                            color: color.c1 // 0% 处的颜色
-                        },
-                        {
-                            offset: 0.4,
-                            color: color.c1 // 0% 处的颜色
-                        },
-                        {
-                            offset: 1,
-                            color: color.c2 // 100% 处的颜色
-                        }
+                        offset: 0,
+                        color: color.c1 // 0% 处的颜色
+                    },
+                    {
+                        offset: 0.4,
+                        color: color.c1 // 0% 处的颜色
+                    },
+                    {
+                        offset: 1,
+                        color: color.c2 // 100% 处的颜色
+                    }
                     ],
                     global: false
                 };
@@ -189,7 +189,7 @@ const EchartsGraph = () => {
             if (idx == 1) {
                 category = item.name;
             }
-            let obj:any = {
+            let obj: any = {
                 name: item.name,
                 symbolSize: symbolSize,
                 // symbol:'image://' + symbol,
@@ -200,17 +200,17 @@ const EchartsGraph = () => {
                 lineStyle
             }
             console.log(idx)
-            if (idx <= 1) { 
-              obj = {
-                name: item.name,
-                symbolSize: symbolSize,
-                symbol:'image://' + symbol,
-                category: category,
-                label,
-                color: bgcolor,
-                itemStyle,
-                lineStyle
-             }
+            if (idx <= 1) {
+                obj = {
+                    name: item.name,
+                    symbolSize: symbolSize,
+                    symbol: 'image://' + symbol,
+                    category: category,
+                    label,
+                    color: bgcolor,
+                    itemStyle,
+                    lineStyle
+                }
             }
 
             obj = Object.assign(item, obj);
@@ -231,12 +231,12 @@ const EchartsGraph = () => {
         });
     }
     // 计算links
-    function handle3(arr:any, index:any, color:any = colors) {
-        arr.forEach((item:any) => {
+    function handle3(arr: any, index: any, color: any = colors) {
+        arr.forEach((item: any) => {
             if (item.list) {
-                item.list.forEach((item2:any, eq:any) => {
+                item.list.forEach((item2: any, eq: any) => {
                     if (index === 0) {
-                        color = colors.find((itemm:any, eq2) => eq2 == eq % 10);
+                        color = colors.find((itemm: any, eq2) => eq2 == eq % 10);
                     }
                     let lineStyle = null;
                     switch (index) {
@@ -246,14 +246,14 @@ const EchartsGraph = () => {
                                     normal: {
                                         color: "target",
                                         // curveness: item.count
-                                        width:1+item2.count/20,
+                                        width: 1 + item2.count / 20,
                                     }
                                 };
                             } else {
                                 lineStyle = {
                                     normal: {
                                         color: color.c2,
-                                        width:0.3,
+                                        width: 0.3,
                                         // curveness: item.count
                                     }
                                 };
@@ -263,13 +263,13 @@ const EchartsGraph = () => {
                             lineStyle = {
                                 normal: {
                                     color: "source",
-                                    width:0.1,
-                                        // curveness: 0.3
+                                    width: 0.1,
+                                    // curveness: 0.3
                                 }
                             };
                             break;
                     }
-                    console.log(item.name,item.count)
+                    console.log(item.name, item.count)
                     let obj = {
                         source: item.name,
                         target: item2.name,
@@ -370,9 +370,9 @@ const EchartsGraph = () => {
                     }
                 },
                 lineStyle: {
-                        width: 1.5,
-                        curveness: 0,
-                        type: "solid"
+                    width: 1.5,
+                    curveness: 0,
+                    type: "solid"
                 }
             }]
         })
@@ -382,7 +382,7 @@ const EchartsGraph = () => {
             instance?.resize();
         }, 100); // 延迟 100ms 确保容器已渲染
         return () => clearTimeout(timer);
-    },[])
+    }, [])
     return (
         <Flex className={styles.echarts_graph_wrapper}>
             <ReactECharts ref={echartRef} key="data-class-key" style={{ width: "100%", height: "100%" }} option={option}></ReactECharts>

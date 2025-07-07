@@ -204,9 +204,11 @@
     height: 100%;
     border-radius: 10px;
     .left{
+        width: 1000px;
         height: 100%;
         // background-color: rgba(238, 232, 170, 0.212);
         position: relative;
+        overflow: hidden;
         .button_wrapper{
             width: 100%;
             position: absolute;
@@ -232,11 +234,13 @@
         .echarts_box{
             width: 100%;
             height: 100%;
+            background-color: palegoldenrod;
         }
     }
     .right{
+        width: 300px;
         height: 100%;
         overflow: hidden;
-        background-color: rgba(211, 170, 238, 0.212);
+        background-color: pink;
     }
 }
