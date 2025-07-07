@@ -29,14 +29,14 @@ const ForceGraphW3D = function (props: Props) {
     const containerRef = useRef<HTMLDivElement>(null);
     const graphRef = useRef<HTMLDivElement>(null);
     const graphInstance = useRef<ForceGraph3DInstance | null>(null);
-
+    const [graphData, setGraphData] = React.useState(data);
     function graphInit(elm: HTMLDivElement) {
         if (!containerRef.current) return;
         
         graphInstance.current = ForceGraph3D(ForceGraph3DOptions)(elm)
             .width(containerRef.current.offsetWidth)
             .height(containerRef.current.offsetHeight)
-            .graphData(data)
+            .graphData(graphData)
             .nodeThreeObject(node => {
                 const group = new THREE.Group();
                 
@@ -60,7 +60,38 @@ const ForceGraphW3D = function (props: Props) {
                 }
                 
                 return group;
-            });
+            })
+        //添加节点点击事件
+            .onNodeClick((node, event) => { 
+                console.log('点击的节点为：', node)
+                // alert(`节点ID: ${node.id}\n节点名称: ${node.name}\n描述: ${node.description || '无'}`);
+                //生成三个新节点
+                const newNodes:any[] = Array.from({length: 3}, (_, i) => ({
+                            id: `${node.id}-${i}-${Date.now()}`,
+                            name: `关联节点${i+1}`,
+                            description: `来自${node.name}的关联节点${i+1}`,
+                            color: [0xff0000, 0x00ff00, 0x0000ff][i]
+                }));
+
+                // 生成新连接
+                const newLinks = newNodes.map(newNode => ({
+                    source: node.id,
+                    target: newNode.id
+                }));
+
+                // 更新数据
+                setGraphData(prev => ({
+                    nodes: [...prev.nodes, ...newNodes],
+                    links: [...prev.links, ...newLinks]
+                }));
+                // 更新图表
+                graphInstance.current?.graphData({
+                    nodes: [...graphData.nodes, ...newNodes],
+                    links: [...graphData.links, ...newLinks]
+                });
+                 alert(`已为节点${node.name}添加3个关联节点`);
+                
+            })
     }
 
     useEffect(() => {

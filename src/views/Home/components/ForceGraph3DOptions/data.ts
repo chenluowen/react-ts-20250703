@@ -3,7 +3,8 @@ export default {
 		{
             "id": "1",
             "user": "mbostock",
-            "description": "Force-Directed Graph"
+            "description": "Force-Directed Graph",
+            color:'yellow'
         },
         {
             "id": "2",
